@@ -12,7 +12,7 @@ import org.testcontainers.junit.jupiter.Container;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class DemoApplicationTests {
+class SoringBootdemoApplicationTests {
 
     @Autowired
     TestRestTemplate restTemplate;
@@ -40,7 +40,7 @@ class DemoApplicationTests {
 
     @Test
     void testProdContainer() {
-         ResponseEntity<String> responseEntity = restTemplate.getForEntity(
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(
                 "http://localhost:" + prodContainer.getMappedPort(8081)+"/profile", String.class);
 
         assertEquals("Current profile is production", responseEntity.getBody());
